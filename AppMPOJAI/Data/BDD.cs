@@ -13,7 +13,7 @@ namespace AppMPOJAI.Data
 
         private BDD()
         {
-            conn = new SqlConnection("Server=SQL5105.site4now.net;Database=db_a9ba88_mttoojai;Uid=db_a9ba88_mttoojai_admin;Pwd=ojai.042017");
+            conn = new SqlConnection("Server=SQL5104.site4now.net;Database=db_a9ba88_mpcloud;Uid=db_a9ba88_mpcloud_admin;Pwd=ojai.042017");
             cmd = new SqlCommand("", conn);
             dt = new System.Data.DataTable();
         }
