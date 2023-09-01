@@ -13,7 +13,7 @@ namespace AppMPOJAI.ViewModels
 
         public VehiculoViewModel()
         {
-            getVehiculos();
+            _ = getVehiculos();
         }
         private async Task getVehiculos()
         {
@@ -21,11 +21,9 @@ namespace AppMPOJAI.ViewModels
             {
                 Vehiculo vehiculo = new Vehiculo();
                 eVehiculo eVehiculo = new eVehiculo();
-
                 ListVehiculos = await vehiculo.getVehiculosAsync();
-
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
                 //await Current.MainPage.DisplayAlert("Error",ex.Message,"Ok");
@@ -37,8 +35,6 @@ namespace AppMPOJAI.ViewModels
         #region propiedades
 
         private List<eVehiculo> listVehiculos;
-       
-
         public List<eVehiculo> ListVehiculos
         {
             get => listVehiculos;
