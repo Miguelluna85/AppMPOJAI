@@ -11,6 +11,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\images\**" />
+    <EmbeddedResource Remove="Resources\images\**" />
+    <None Remove="Resources\images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\truck.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
@@ -19,6 +29,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Views\Conductor.xaml.cs">
       <DependentUpon>Conductor.xaml</DependentUpon>
     </Compile>
@@ -30,6 +45,10 @@
   <ItemGroup>
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Calendario.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -56,5 +75,9 @@
 
   <ItemGroup>
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\truck.png" />
   </ItemGroup>
 </Project>

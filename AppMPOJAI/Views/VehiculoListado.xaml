@@ -13,6 +13,7 @@
         <SearchHandler></SearchHandler>
     </Shell.SearchHandler>-->
     <StackLayout  Margin="10,10,10,0">
+
         <!--<Grid>
             <Grid.RowDefinitions >
                 <RowDefinition Height="Auto"/>
@@ -21,13 +22,17 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                --><!--<ColumnDefinition Width="*"/>--><!--
+                -->
+        <!--<ColumnDefinition Width="*"/>-->
+        <!--
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            --><!--<Label Text="ID" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>--><!--
+            -->
+        <!--<Label Text="ID" Grid.Row="0" Grid.Column="0" TextColor="Blue"/>-->
+        <!--
             <Label Text="ECO " Grid.Row="0" Grid.Column="0" TextColor="Gray" HorizontalOptions="Center"/>
             <Label Text="Descripcion" Grid.Row="0" Grid.Column="1" TextColor="Gray" HorizontalOptions="Center"/>
             <Label Text="Placas"  Grid.Row="0" Grid.Column="2" TextColor="Gray" HorizontalOptions="Center"/>
@@ -39,26 +44,30 @@
             ItemsLayout="VerticalList">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="2">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30" />
-                            <RowDefinition Height="30" />
-                            <RowDefinition Height="30" />
-                            <RowDefinition Height="30" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                            <ColumnDefinition Width="70" />
-                        </Grid.ColumnDefinitions>
-                        <!--<Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60"  WidthRequest="60" />-->
-                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding eco}" FontAttributes="Bold" LineBreakMode="TailTruncation" />
-                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding placas}" FontAttributes="Bold" LineBreakMode="TailTruncation" />
-                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding modelo}" FontAttributes="Bold" LineBreakMode="TailTruncation" />
-                        <Label Grid.Row="3" Grid.Column="1" Text="{Binding descripcion}" LineBreakMode="TailTruncation" FontAttributes="Italic" VerticalOptions="End" />
-                        
-                    </Grid>
+                    <Frame
+                        Padding="5"
+                        CornerRadius="2"
+                        IsClippedToBounds="False">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="4" Source="/Resources/images/truck.png" Aspect="AspectFill" HeightRequest="80"  WidthRequest="80" />
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding eco}"  TextColor="Black" FontAttributes="Bold" LineBreakMode="TailTruncation" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding placas}"  TextColor="Black" LineBreakMode="TailTruncation" />
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding modelo}"  TextColor="Black"  LineBreakMode="TailTruncation" />
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding descripcion}" TextColor="Black"  LineBreakMode="TailTruncation"  VerticalOptions="End" />
+                        </Grid>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
