@@ -69,5 +69,15 @@ namespace AppMPOJAI.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] user_default {
+            get {
+                object obj = ResourceManager.GetObject("user_default", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

@@ -105,6 +105,34 @@ namespace AppMPOJAI.Data
 
             return dt.Copy();
         }
+        public System.Data.DataTable executeDataTable(List<SqlParameter> lstParametros, string sp)
+        {
+            try
+            {
+                dt = new System.Data.DataTable();
+                cmd.Parameters.Clear();
+
+                conn.Open();
+
+                cmd.CommandText = sp;
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(lstParametros.ToArray());
+                dt.Clear();
+                dt.Load(cmd.ExecuteReader());
+                conn.Close();
+            }
+            catch (System.Exception ex)
+            {
+                conn.Close();
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt.Copy();
+        }
         public async Task<int> executeNonQueryAsync(string sp)
         {
             int resultado = 0;

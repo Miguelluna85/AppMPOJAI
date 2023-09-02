@@ -26,6 +26,22 @@ namespace AppMPOJAI.Data
             }
             return list;
         }
+        public List<eVehiculo> getVehiculos(string filtro = "")
+        {
+            List<eVehiculo> list = new List<eVehiculo>();
+
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("filtro",System.Data.SqlDbType.VarChar){ Value=filtro}
+            };
+
+            DataTable dtVehiculos =  BDD.getInstancia().executeDataTable(parameters, "usp_getVehiculosFiltro");
+            foreach (DataRow item in dtVehiculos.Rows)
+            {
+                list.Add(dataRowAObj(item));
+            }
+            return list;
+        }
         public eVehiculo dataRowAObj(DataRow item)
         {
             try

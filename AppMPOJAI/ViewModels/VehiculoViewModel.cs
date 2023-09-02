@@ -13,19 +13,19 @@ namespace AppMPOJAI.ViewModels
 
         public VehiculoViewModel()
         {
-            _ = getVehiculos();
+            getVehiculos();
         }
-        private async Task getVehiculos()
+        private void getVehiculos()
         {
             try
             {
                 Vehiculo vehiculo = new Vehiculo();
                 eVehiculo eVehiculo = new eVehiculo();
-                ListVehiculos = await vehiculo.getVehiculosAsync();
+                ListVehiculos = vehiculo.getVehiculos();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
                 //await Current.MainPage.DisplayAlert("Error",ex.Message,"Ok");
             }
         }

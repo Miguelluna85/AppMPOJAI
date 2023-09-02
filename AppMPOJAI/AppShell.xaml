@@ -33,7 +33,7 @@
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <Tab Title="Vehiculo">
             <ShellContent Title="Vehiculos" ContentTemplate="{DataTemplate  Views:VehiculoListado}" />
-            <ShellContent Title="Conductores" ContentTemplate="{DataTemplate  Views:Conductor}" />
+            <ShellContent Title="Conductores" ContentTemplate="{DataTemplate  Views:ConductorListado}" />
             <ShellContent Title="Licencias" ContentTemplate="{DataTemplate  Views:Licencia}" />            
         </Tab>
     </FlyoutItem>  
