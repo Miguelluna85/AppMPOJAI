@@ -31,6 +31,6 @@ namespace AppMPOJAI.Models
         public int idUsuarioModifico { get; set; }
         public DateTime fechaModifico { get; set; }
 
-
+        public bool arrendado { get; set; }
     }
 }

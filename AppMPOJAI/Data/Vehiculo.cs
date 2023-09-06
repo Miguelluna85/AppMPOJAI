@@ -35,13 +35,33 @@ namespace AppMPOJAI.Data
                 new SqlParameter("filtro",System.Data.SqlDbType.VarChar){ Value=filtro}
             };
 
-            DataTable dtVehiculos =  BDD.getInstancia().executeDataTable(parameters, "usp_getVehiculosFiltro");
+            DataTable dtVehiculos = BDD.getInstancia().executeDataTable(parameters, "usp_getVehiculosFiltro");
             foreach (DataRow item in dtVehiculos.Rows)
             {
                 list.Add(dataRowAObj(item));
             }
             return list;
         }
+
+
+        public async Task<List<eVehiculo>> getVehiculosActivosxAreaAsync(int idArea)
+        {
+            List<eVehiculo> list = new List<eVehiculo>();
+            List<SqlParameter> parameters = new List<SqlParameter>()
+            {
+                new SqlParameter("filtro",System.Data.SqlDbType.VarChar){ Value=idArea}
+            };
+
+            DataTable dtVehiculos = await BDD.getInstancia().executeDataTableAsync(parameters, "usp_getVehiculosActivosxIdArea");
+            foreach (DataRow item in dtVehiculos.Rows)
+            {
+                list.Add(dataRowAObj(item));
+            }
+            return list;
+        }
+
+
+
         public eVehiculo dataRowAObj(DataRow item)
         {
             try

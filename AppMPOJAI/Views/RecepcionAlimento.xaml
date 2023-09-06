@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMPOJAI.Views.RecepcionAlimento">
+
+    <ScrollView>
+
+        <StackLayout>
+
+            <Label Text="Protocolo de Recepción de Tolvas a  Granjas" Margin="0,10,0,0" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+
+
+            <StackLayout>
+                <Picker Title="Granja"/>
+                <Picker Title="Tolva"/>
+                
+            </StackLayout>
+            
+            
+            
+            
+            
+            
+            <Label Margin="0,30,0,5" Grid.Row="0" Grid.Column="0"  Text="Entrada Tolva"  TextColor="Black" FontSize="Header" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"  Text="Presenta Papeleta de Lavado?"  TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" />
+                <Switch Grid.Row="0" Grid.Column="1"  IsToggled="True" />
+                <Label Grid.Row="1" Grid.Column="0"  Text="Procedente de planta de alimentos viene flejada? "  TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" />
+                <Switch Grid.Row="1" Grid.Column="1"  IsToggled="false" />
+                <Label Grid.Row="2" Grid.Column="0"  Text="Presenta Papeleta de que Alimento trae y cantidades? "  TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Start" />
+                <Switch Grid.Row="2" Grid.Column="1"  IsToggled="false" />
+                <Label Grid.Row="3" Grid.Column="0"  Text="Se toma video de como están los compartimientos ala llegada ala granja? "  TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" />
+                <Switch Grid.Row="3" Grid.Column="1"  IsToggled="false" />
+            </Grid>
+
+            <Label Margin="0,15,0,5" Grid.Row="0" Grid.Column="0"  Text="Salida Tolva"   FontSize="Header"  TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>                
+                <Label Grid.Row="0" Grid.Column="0"  Text="Se toma video de como van vacíos los compartimientos de la Tolva? "  TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" />
+                <Switch Grid.Row="0" Grid.Column="1"  IsToggled="false" />
+                <Label Grid.Row="1" Grid.Column="0"  Text="Tolva se fleja en granja? "  TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" />
+                <Switch Grid.Row="1" Grid.Column="1"  IsToggled="false" />
+            </Grid>
+
+            <Button Text="Enviar Reporte" Margin="0,50,0,0" BackgroundColor="Orange"/>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

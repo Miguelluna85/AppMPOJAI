@@ -41,6 +41,10 @@
     <ShellContent Title="Calenadrio Mtto." ContentTemplate="{DataTemplate  Views:Calendario}" />
     <ShellContent Title="Responsivas" ContentTemplate="{DataTemplate  Views:Responsiva}" />
 
+    <ShellContent Title="Protocolo Recepción de Tolvas en Granjas" ContentTemplate="{DataTemplate  Views:RecepcionAlimento}" />
+
+
+
     <MenuItem Text="Ayuda"   />
 
 
