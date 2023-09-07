@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using AppMPOJAI.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace AppMPOJAI.Views
         public RecepcionAlimento()
         {
             InitializeComponent();
+            BindingContext = new RecepcionAlimentoViewModel();
         }
     }
 }

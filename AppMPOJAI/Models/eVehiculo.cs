@@ -32,5 +32,10 @@ namespace AppMPOJAI.Models
         public DateTime fechaModifico { get; set; }
 
         public bool arrendado { get; set; }
+
+        public string eco_descripcion 
+        {
+            get; set;
+        }
     }
 }

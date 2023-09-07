@@ -10,10 +10,10 @@ namespace AppMPOJAI.Data
 {
     public class Departamento
     {
-        public async Task<List<eDepartamento>> getDepartamentosAsync()
+        public List<eDepartamento> getDepartamentos()
         {
             List<eDepartamento> list = new List<eDepartamento>();
-            DataTable dtVehiculos = await BDD.getInstancia().executeDataTableAsync("usp_getDepartamentos");
+            DataTable dtVehiculos = BDD.getInstancia().executeDataTable("usp_getDepartamentos");
             foreach (DataRow item in dtVehiculos.Rows)
             {
                 list.Add(dataRowAObj(item));
@@ -21,10 +21,10 @@ namespace AppMPOJAI.Data
             return list;
         }
 
-        public async Task<List<eDepartamento>> getDepartamentosActivosXAreaAsync(int idArea)
+        public List<eDepartamento> getDepartamentosActivosXArea(int idArea)
         {
             List<eDepartamento> list = new List<eDepartamento>();
-            list = await getDepartamentosAsync();
+            list = getDepartamentos();
             return list.Where(P => P.idArea == idArea).ToList();
         }
 
@@ -32,25 +32,23 @@ namespace AppMPOJAI.Data
         {
             try
             {
-
-
                 eDepartamento vehiculo = new eDepartamento()
                 {
                     id = Convert.ToInt32(item["id"].ToString()),
-                    nombre = item["eco"].ToString(),
+                    nombre = item["nombre"].ToString(),
                     descripcion = item["descripcion"].ToString(),
                     estatus = System.Convert.ToBoolean(item["estatus"].ToString()),
                     idUsuarioAlta = System.Convert.ToInt32(item["idUsuarioAlta"].ToString()),
                     fechaAlta = System.Convert.ToDateTime(item["fechaAlta"].ToString()),
                     idUsuarioModifico = System.Convert.ToInt32(item["idUsuarioModifico"].ToString()),
-                    fechaModifico = System.Convert.ToDateTime(item["fechaModifico"].ToString()),
-                    idArea = System.Convert.ToInt32(item["idArea"].ToString())
+                    //fechaModifico = System.Convert.ToDateTime(item["fechaModifico"].ToString()),
+                    idArea = System.Convert.ToInt32(item["idArea"].ToString()),
+                    
                 };
                 return vehiculo;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

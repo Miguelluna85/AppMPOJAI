@@ -11,8 +11,14 @@
 
 
             <StackLayout>
-                <Picker Title="Granja"/>
-                <Picker Title="Tolva"/>
+                <Picker Title="Granja" 
+                        ItemDisplayBinding="{Binding nombre}"
+                        ItemsSource="{Binding ListDepartamentos}" 
+                        SelectedItem="{Binding SelectedDepartamento}"/>
+                <Picker Title="Tolva" 
+                        ItemDisplayBinding="{Binding eco_descripcion }"
+                        ItemsSource="{Binding ListVehiculos}" 
+                        SelectedItem="{Binding SelectedVehiculo}"/>
                 
             </StackLayout>
             
@@ -62,7 +68,9 @@
                 <Switch Grid.Row="1" Grid.Column="1"  IsToggled="false" />
             </Grid>
 
-            <Button Text="Enviar Reporte" Margin="0,50,0,0" BackgroundColor="Orange"/>
+            <Button Text="Enviar Reporte"
+                    Command="{Binding GuardarCommand}"
+                    Margin="0,50,0,0" BackgroundColor="Orange"/>
     </StackLayout>
     </ScrollView>
 </ContentPage>

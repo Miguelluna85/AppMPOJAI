@@ -44,15 +44,15 @@ namespace AppMPOJAI.Data
         }
 
 
-        public async Task<List<eVehiculo>> getVehiculosActivosxAreaAsync(int idArea)
+        public List<eVehiculo> getVehiculosActivosxArea(int idArea)
         {
             List<eVehiculo> list = new List<eVehiculo>();
             List<SqlParameter> parameters = new List<SqlParameter>()
             {
-                new SqlParameter("filtro",System.Data.SqlDbType.VarChar){ Value=idArea}
+                new SqlParameter("idArea",System.Data.SqlDbType.VarChar){ Value=idArea}
             };
 
-            DataTable dtVehiculos = await BDD.getInstancia().executeDataTableAsync(parameters, "usp_getVehiculosActivosxIdArea");
+            DataTable dtVehiculos =  BDD.getInstancia().executeDataTable(parameters, "usp_getVehiculosActivosxIdArea");
             foreach (DataRow item in dtVehiculos.Rows)
             {
                 list.Add(dataRowAObj(item));
@@ -83,6 +83,7 @@ namespace AppMPOJAI.Data
                     //rutaFotos = item["rutaFotos"].ToString(),
                     comentarios = item["comentarios"].ToString(),
                     estatus = System.Convert.ToBoolean(item["estatus"].ToString()),
+                    eco_descripcion= item["eco"].ToString() +" - "+ item["descripcion"].ToString()
                     /*idUsuarioAlta = System.Convert.ToInt32(item["idUsuarioAlta"].ToString()),
                    fechaAlta = System.Convert.ToDateTime(item["fechaAlta"].ToString()),
                    idUsuarioModifico = System.Convert.ToInt32(item["idUsuarioModifico"].ToString()),
