@@ -29,9 +29,9 @@ namespace AppMPOJAI.ViewModels
 
         }
 
-        //public async Task DisplayAlertViewModel(string titulo, string mensaje, string accion)
-        //{
-        //    await App.MasterDet.Detail.DisplayAlert(titulo, mensaje, accion);
-        //}
+        public async Task DisplayAlertViewModel(string titulo, string mensaje, string accion)
+        {
+            await App.Current.MainPage.DisplayAlert(titulo, mensaje, accion);
+        }
     }
 }
