@@ -42,6 +42,7 @@
     <ShellContent Title="Responsivas" ContentTemplate="{DataTemplate  Views:Responsiva}" />
 
     <ShellContent Title="Protocolo Recepción de Tolvas en Granjas" ContentTemplate="{DataTemplate  Views:RecepcionAlimento}" />
+    <ShellContent Title="Entragas por Granja" ContentTemplate="{DataTemplate  Views:RecepcionAlimento}" />
 
 
 
